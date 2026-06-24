@@ -23,7 +23,6 @@ const process = [
   { k: "04", t: "Build & Handover", d: "Hand-built front-ends, brand guidelines, and a thorough handover. Quiet support for thirty days after launch." },
 ];
 
-export default function _unused() {} // keep parser stable if pasted standalone
 
 function ServicesPage() {
   return (
