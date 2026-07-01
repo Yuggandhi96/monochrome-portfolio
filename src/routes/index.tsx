@@ -41,7 +41,7 @@ function Home() {
               </h1>
               <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-12">
                 <p className="max-w-md text-base leading-relaxed text-ink-soft md:text-lg">
-                  Alex Mercer. Designer and developer. Brand, interface, and code.
+                  {profile.name}. {profile.role}. {profile.shortBio}
                 </p>
                 <div className="flex flex-col gap-3 text-sm md:items-end">
                   <Link to="/work" className="group inline-flex items-center gap-2 self-start border-b border-foreground pb-1 font-medium md:self-end">
