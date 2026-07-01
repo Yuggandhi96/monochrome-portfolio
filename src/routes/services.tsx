@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, SectionLabel } from "@/components/site-chrome";
-import { services } from "@/lib/portfolio-data";
+import { services, process } from "@/lib/portfolio-data";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -16,12 +16,6 @@ export const Route = createFileRoute("/services")({
   component: ServicesPage,
 });
 
-const process = [
-  { k: "01", t: "Discovery", d: "We define the work together." },
-  { k: "02", t: "Direction", d: "A few directions. One is chosen." },
-  { k: "03", t: "Design", d: "Weekly iteration with the founder." },
-  { k: "04", t: "Build", d: "Hand-built, handed over, supported." },
-];
 
 function ServicesPage() {
   return (

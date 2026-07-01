@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, SectionLabel } from "@/components/site-chrome";
-import portrait from "@/assets/portrait.jpg";
+import { portraitImage as portrait, profile, stats } from "@/lib/portfolio-data";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -60,12 +60,7 @@ function AboutPage() {
       <section className="border-b hairline">
         <div className="mx-auto max-w-[1400px] px-6 py-16 md:px-10 md:py-24">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {[
-              { v: "08", l: "Years" },
-              { v: "47", l: "Projects" },
-              { v: "12", l: "Awards" },
-              { v: "100%", l: "Referrals" },
-            ].map((s) => (
+            {stats.map((s) => (
               <div key={s.l}>
                 <div className="font-display text-5xl md:text-7xl">{s.v}</div>
                 <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">{s.l}</div>
