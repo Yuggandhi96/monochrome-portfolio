@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { SiteHeader, SiteFooter, SectionLabel } from "@/components/site-chrome";
-import { clients, projects, services } from "@/lib/portfolio-data";
+import { clients, projects, services, profile, home } from "@/lib/portfolio-data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const featured = projects.slice(0, 3);
+  const featured = projects.slice(0, home.featuredCount);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
@@ -28,13 +28,16 @@ function Home() {
           <div className="grid grid-cols-12 gap-6">
             <div className="col-span-12 md:col-span-3">
               <SectionLabel index="01" label="Portfolio" />
-              <p className="mt-4 font-mono text-xs text-muted-foreground">Brooklyn, NY</p>
+              <p className="mt-4 font-mono text-xs text-muted-foreground">{profile.location}</p>
             </div>
             <div className="col-span-12 md:col-span-9">
               <h1 className="reveal font-display text-[14vw] leading-[0.9] tracking-tight md:text-[9.5vw]">
-                Simple.<br />
-                <em className="italic text-muted-foreground">Considered.</em><br />
-                Shipped.
+                {home.headline.map((line, i) => (
+                  <span key={i}>
+                    {i === home.italicIndex ? <em className="italic text-muted-foreground">{line}</em> : line}
+                    {i < home.headline.length - 1 && <br />}
+                  </span>
+                ))}
               </h1>
               <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-12">
                 <p className="max-w-md text-base leading-relaxed text-ink-soft md:text-lg">
