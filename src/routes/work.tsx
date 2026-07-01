@@ -7,9 +7,9 @@ export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
       { title: "Work — Alex Mercer" },
-      { name: "description", content: "Selected projects in brand identity, interface design, and engineering, 2023 — present." },
+      { name: "description", content: "Selected projects, 2023 to today." },
       { property: "og:title", content: "Work — Alex Mercer" },
-      { property: "og:description", content: "Selected projects in brand identity, interface design, and engineering." },
+      { property: "og:description", content: "Selected projects, 2023 to today." },
       { property: "og:url", content: "/work" },
     ],
     links: [{ rel: "canonical", href: "/work" }],
@@ -26,14 +26,14 @@ function WorkPage() {
         <div className="mx-auto max-w-[1400px] px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-32">
           <div className="grid grid-cols-12 gap-6">
             <div className="col-span-12 md:col-span-3">
-              <SectionLabel index="02" label="Selected work" />
+              <SectionLabel index="02" label="Work" />
             </div>
             <div className="col-span-12 md:col-span-9">
               <h1 className="font-display text-6xl leading-[0.95] tracking-tight md:text-8xl">
-                Work <em className="italic text-muted-foreground">/</em> 2023 — present
+                Selected work.
               </h1>
-              <p className="mt-8 max-w-xl text-base leading-relaxed text-ink-soft">
-                A selection of recent collaborations with studios, founders, and cultural houses across identity, interface, and editorial design.
+              <p className="mt-8 max-w-lg text-base leading-relaxed text-ink-soft">
+                A few recent projects.
               </p>
             </div>
           </div>
@@ -41,22 +41,33 @@ function WorkPage() {
       </section>
 
       <section>
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <ul>
+        <div className="mx-auto max-w-[1400px] px-6 py-10 md:px-10 md:py-16">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-10 md:gap-y-16">
             {projects.map((p) => (
-              <li key={p.no} className="group border-b hairline">
-                <Link to="/contact" className="grid grid-cols-12 items-center gap-6 py-8 md:py-10">
-                  <span className="col-span-2 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground md:col-span-1">{p.no}</span>
-                  <span className="col-span-10 font-display text-3xl tracking-tight transition-transform duration-500 ease-out group-hover:translate-x-3 md:col-span-6 md:text-5xl">{p.title}</span>
-                  <span className="col-span-7 hidden text-sm text-ink-soft md:col-span-3 md:block">{p.role}</span>
-                  <span className="col-span-5 flex items-center justify-end gap-3 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground md:col-span-2">
-                    {p.year}
-                    <ArrowUpRight className="size-4 text-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                  </span>
-                </Link>
-              </li>
+              <Link to="/contact" key={p.no} className="group block">
+                <div className="overflow-hidden bg-muted">
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="aspect-[4/3] w-full object-cover grayscale transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                </div>
+                <div className="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                      {p.no} — {p.year}
+                    </div>
+                    <h2 className="mt-2 font-display text-2xl md:text-3xl">{p.title}</h2>
+                    <p className="mt-1 text-sm text-ink-soft">{p.role}</p>
+                  </div>
+                  <ArrowUpRight className="size-5 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </div>
+              </Link>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
