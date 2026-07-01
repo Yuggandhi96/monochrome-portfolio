@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, SectionLabel } from "@/components/site-chrome";
-import { services } from "@/lib/portfolio-data";
+import { services, process } from "@/lib/portfolio-data";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
