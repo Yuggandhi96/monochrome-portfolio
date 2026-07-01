@@ -7,6 +7,7 @@ import { toast } from "sonner";
 
 import { SiteHeader, SiteFooter, SectionLabel } from "@/components/site-chrome";
 import { sendContactMessage } from "@/lib/contact.functions";
+import { contactInfo } from "@/lib/portfolio-data";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -86,7 +87,7 @@ function ContactPage() {
               Let's make<br />something <em className="italic text-muted-foreground">quiet</em>.
             </h1>
             <p className="mt-8 max-w-xl text-base leading-relaxed text-ink-soft">
-              Currently booking engagements for Q3 2026. Share a few details and I'll reply within two business days.
+              {contactInfo.note}
             </p>
           </div>
         </div>
@@ -96,16 +97,16 @@ function ContactPage() {
         <div className="mx-auto grid max-w-[1400px] grid-cols-12 gap-6 px-6 py-16 md:px-10 md:py-24">
           {/* Aside */}
           <aside className="col-span-12 space-y-10 md:col-span-4">
-            <Detail label="Email" value="hello@mercer.studio" href="mailto:hello@mercer.studio" />
-            <Detail label="Press" value="press@mercer.studio" href="mailto:press@mercer.studio" />
-            <Detail label="Studio" value={"Brooklyn, NY\nBy appointment"} />
-            <Detail label="Hours" value={"Mon — Thu\n10:00 — 18:00 ET"} />
+            <Detail label="Email" value={contactInfo.email} href={`mailto:${contactInfo.email}`} />
+            <Detail label="Press" value={contactInfo.press} href={`mailto:${contactInfo.press}`} />
+            <Detail label="Studio" value={contactInfo.studio} />
+            <Detail label="Hours" value={contactInfo.hours} />
             <div>
               <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Elsewhere</div>
               <div className="mt-3 flex flex-col gap-2 text-sm">
-                {["Instagram", "Read.cv", "GitHub", "LinkedIn"].map((s) => (
-                  <a key={s} href="#" className="group inline-flex items-center gap-2 hover:opacity-60">
-                    {s}
+                {contactInfo.socials.map((s) => (
+                  <a key={s.label} href={s.href} className="group inline-flex items-center gap-2 hover:opacity-60">
+                    {s.label}
                     <ArrowUpRight className="size-3.5" />
                   </a>
                 ))}

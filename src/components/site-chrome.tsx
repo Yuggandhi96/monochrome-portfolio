@@ -1,4 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
+import { profile } from "@/lib/portfolio-data";
 
 const links = [
   { to: "/", label: "Index" },
