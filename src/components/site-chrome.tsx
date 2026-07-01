@@ -16,7 +16,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b hairline bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 md:px-10">
         <Link to="/" className="font-display text-lg tracking-tight">
-          Mercer<span className="text-muted-foreground">.studio</span>
+          {profile.studioName}
         </Link>
         <nav className="hidden items-center gap-8 font-mono text-xs uppercase tracking-[0.18em] md:flex">
           {links.map((l) => {
@@ -41,7 +41,7 @@ export function SiteHeader() {
           to="/contact"
           className="hidden items-center gap-2 border border-foreground px-3 py-2 font-mono text-[10px] uppercase tracking-[0.18em] transition-colors hover:bg-foreground hover:text-background md:inline-flex"
         >
-          Available — Q3
+          {profile.availability}
           <span className="size-1.5 rounded-full bg-foreground" />
         </Link>
       </div>
