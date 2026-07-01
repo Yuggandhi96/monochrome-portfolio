@@ -1,0 +1,55 @@
+{
+  "profile": {
+    "name": "Alex Mercer",
+    "studioName": "Mercer.studio",
+    "role": "Designer & Developer",
+    "location": "Brooklyn, NY",
+    "shortBio": "Independent designer and developer. Brand, interface, and code.",
+    "longBio": "I'm Alex. I design and build with a small number of clients each year.",
+    "availability": "Available — Q3"
+  },
+  "home": {
+    "headline": ["Simple.", "Considered.", "Shipped."],
+    "italicIndex": 1,
+    "featuredCount": 3
+  },
+  "contactInfo": {
+    "email": "hello@mercer.studio",
+    "press": "press@mercer.studio",
+    "studio": "Brooklyn, NY\nBy appointment",
+    "hours": "Mon — Thu\n10:00 — 18:00 ET",
+    "note": "Currently booking engagements for Q3 2026. Share a few details and I'll reply within two business days.",
+    "socials": [
+      { "label": "Instagram", "href": "#" },
+      { "label": "Read.cv", "href": "#" },
+      { "label": "GitHub", "href": "#" },
+      { "label": "LinkedIn", "href": "#" }
+    ]
+  },
+  "clients": ["Meridian", "Halcyon", "Paloma", "North & Co.", "Field Notes", "Object Permanence", "Atelier Nord", "Verso"],
+  "projects": [
+    { "no": "01", "year": "2026", "title": "Meridian Type Foundry", "role": "Identity, website", "tag": "Typography", "image": "texture-01" },
+    { "no": "02", "year": "2025", "title": "Halcyon Capital", "role": "Visual system, web", "tag": "Finance", "image": "texture-02" },
+    { "no": "03", "year": "2025", "title": "Object Permanence", "role": "Editorial, art direction", "tag": "Publishing", "image": "texture-03" },
+    { "no": "04", "year": "2024", "title": "Paloma Coffee Roasters", "role": "Identity, packaging", "tag": "Commerce", "image": "texture-04" },
+    { "no": "05", "year": "2024", "title": "Field Notes Archive", "role": "Product, engineering", "tag": "Software", "image": "texture-01" },
+    { "no": "06", "year": "2023", "title": "North & Co.", "role": "Naming, identity", "tag": "Hospitality", "image": "texture-02" }
+  ],
+  "services": [
+    { "k": "01", "t": "Brand Identity", "d": "Marks and systems for studios and founders.", "image": "texture-03" },
+    { "k": "02", "t": "Interface Design", "d": "Clear, calm product and marketing sites.", "image": "texture-04" },
+    { "k": "03", "t": "Engineering", "d": "Hand-built front-ends in React and TypeScript.", "image": "texture-02" }
+  ],
+  "process": [
+    { "k": "01", "t": "Discovery", "d": "We define the work together." },
+    { "k": "02", "t": "Direction", "d": "A few directions. One is chosen." },
+    { "k": "03", "t": "Design", "d": "Weekly iteration with the founder." },
+    { "k": "04", "t": "Build", "d": "Hand-built, handed over, supported." }
+  ],
+  "stats": [
+    { "v": "08", "l": "Years" },
+    { "v": "47", "l": "Projects" },
+    { "v": "12", "l": "Awards" },
+    { "v": "100%", "l": "Referrals" }
+  ]
+}
